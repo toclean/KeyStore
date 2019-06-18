@@ -38,6 +38,7 @@ export default class Map
     setValue(key: string, obj: any): number
     {
         if (this.getValueByKey(key) != -1) return -1
+        if (this.keys.length > 100 || this.values.length > 100) return 11
 
         this.keys.push(key)
         this.values.push(obj)
